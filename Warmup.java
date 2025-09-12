@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 import java.util.Scanner;
 import java.util.concurrent.*;
-public class SP_lr1 {
+public class Warmup {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите первое число: ");
