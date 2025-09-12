@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutionException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SP_lr1Test {
+class WarmupTest {
     private final PrintStream originalOut = System.out;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
@@ -130,4 +130,5 @@ class SP_lr1Test {
         assertEquals(35, SP_lr1.mulParallel(-5, -7));
         assertEquals(63, SP_lr1.mulParallel(9, 7));
     }
+
 }
