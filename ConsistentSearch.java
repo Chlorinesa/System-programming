@@ -17,7 +17,7 @@ public class ConsistentSearch {
                 int second = mas[j];
                 int mul = first * second;
                 if (mul % 21 == 0) {
-                    if (minMul==-1||mul < minMul) {
+                    if ((minMul==-1||mul < minMul)&&IntStream.of(mas).anyMatch(x ->x == mul)){
                         minMul = mul;
 //                      System.out.println(first + " " + second);
                     }
