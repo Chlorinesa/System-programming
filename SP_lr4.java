@@ -8,7 +8,7 @@ class Chicken implements Runnable {
         for(int i = 0; i< 8; i++){
             try {
                 Thread.sleep(800);
-                Main.eggOrChicken(name);
+                SP_lr4.eggOrChicken(name);
                 System.out.println("\u001B[31m"+name + "!");
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -27,7 +27,7 @@ class Egg implements Runnable {
         for(int i = 0; i<8; i++){
             try {
                 Thread.sleep(800);
-                Main.eggOrChicken(name);
+               SP_lr4.eggOrChicken(name);
                 System.out.println("\u001B[33m "+name+ "!");
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
