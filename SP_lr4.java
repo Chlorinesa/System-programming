@@ -1,25 +1,6 @@
-class Chicken implements Runnable {
+class EggAndChicken implements Runnable {
     String name;
-    Chicken(String name) {
-        this.name = name;
-    }
-    @Override
-    public void run() {
-        for(int i = 0; i< 8; i++){
-            try {
-                Thread.sleep(800);
-                SP_lr4.eggOrChicken(name);
-                System.out.println("\u001B[31m"+name + "!");
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                return;
-            }
-        }
-    }
-}
-class Egg implements Runnable {
-    String name;
-    Egg(String name) {
+    EggAndChicken(String name) {
         this.name = name;
     }
     @Override
@@ -27,8 +8,13 @@ class Egg implements Runnable {
         for(int i = 0; i<8; i++){
             try {
                 Thread.sleep(800);
-               SP_lr4.eggOrChicken(name);
-                System.out.println("\u001B[33m "+name+ "!");
+                SP_lr4.eggOrChicken(name);
+                if(name.equals("Яйцо")){
+                        System.out.println("\u001B[33m"+ name + "!");
+                    }
+                    else {
+                        System.out.println("\u001B[31m"+ name + "!");
+                    }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 return;
@@ -42,8 +28,8 @@ public class SP_lr4{
     private static final Object lock = new Object();
 
     public static void main(String[] args) {
-        Thread chicken = new Thread(new Chicken("Курица"));
-        Thread egg = new Thread(new Egg("Яйцо"));
+        Thread chicken = new Thread(new EggAndChicken("Курица"));
+        Thread egg = new Thread(new EggAndChicken("Яйцо"));
         chicken.start();
         egg.start();
         if (egg.isAlive()&&chicken.isAlive()) {
